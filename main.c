@@ -31,6 +31,7 @@ void bcd(int n) {
     }
     printf("\n");
 }
+
 void complemento2(int n) {
     printf("Decimal para Complemento a 2 (16 bits): ");
     if (n < 0) {
@@ -39,7 +40,10 @@ void complemento2(int n) {
     for (int i = 15; i >= 0; i--) {
         printf("%d", (n >> i) & 1);
     }
-    void floatIEEE754(float num) {
+    printf("\n");
+}
+
+void floatIEEE754(float num) {
     union {
         float input;
         int output;
@@ -63,8 +67,6 @@ void doubleIEEE754(double num) {
            (data.output >> 63) & 1,
            (data.output >> 52) & 0x7FF,
            data.output & 0xFFFFFFFFFFFFF);
-}
-    printf("\n");
 }
 
 int main() {
@@ -111,6 +113,9 @@ int main() {
                 printf("Opção inválida!\n");
         }
     } while (escolha != 4);
+
+    return 0;
+}
 
     return 0;
 }
