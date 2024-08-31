@@ -66,3 +66,53 @@ void doubleIEEE754(double num) {
 }
     printf("\n");
 }
+
+int main() {
+    int escolha;
+    int numero;
+    float numReal;
+    double numRealDouble;
+
+    do {
+        printf("\nCalculadora Programador Didática\n");
+        printf("Escolha uma opção:\n");
+        printf("1 - Converter decimal para outras bases\n");
+        printf("2 - Converter decimal para complemento a 2 (16 bits)\n");
+        printf("3 - Converter número real para IEEE 754 (float e double)\n");
+        printf("4 - Sair\n");
+        scanf("%d", &escolha);
+
+        switch (escolha) {
+            case 1:
+                printf("Digite um número decimal: ");
+                scanf("%d", &numero);
+                binario(numero);
+                octal(numero);
+                hexadecimal(numero);
+                bcd(numero);
+                break;
+            case 2:
+                printf("Digite um número decimal: ");
+                scanf("%d", &numero);
+                complemento2(numero);
+                break;
+            case 3:
+                printf("Digite um número real (float): ");
+                scanf("%f", &numReal);
+                floatIEEE754(numReal);
+                printf("Digite um número real (double): ");
+                scanf("%lf", &numRealDouble);
+                doubleIEEE754(numRealDouble);
+                break;
+            case 4:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+    } while (escolha != 4);
+
+    return 0;
+}
+
+
