@@ -31,3 +31,13 @@ void bcd(int n) {
     }
     printf("\n");
 }
+void complemento2(int n) {
+    printf("Decimal para Complemento a 2 (16 bits): ");
+    if (n < 0) {
+        n = (~(-n) + 1) & 0xFFFF;
+    }
+    for (int i = 15; i >= 0; i--) {
+        printf("%d", (n >> i) & 1);
+    }
+    printf("\n");
+}
